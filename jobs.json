@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "0b14b6ab-c6f5-472a-83ee-68b30b9f0d90",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "GitHub Trending Test",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1773540762721,
+      "updatedAtMs": 1773540807841,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-15T10:15:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "获取 GitHub 上本周新创建的热门项目，按 Star 数排序，列出前 5 个。包含：项目名称、简介、编程语言、Star 数、链接。格式为 Markdown 表格。"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "lastError": "DingTalk message requires --to <conversationId>",
+        "lastRunAtMs": 1773540791607,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 16234,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "0dd74bdd-b189-4e97-9db6-39d375bd719d",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "GitHub Trending Weekly",
+      "enabled": true,
+      "createdAtMs": 1773541843169,
+      "updatedAtMs": 1773623400303,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * MON",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "【任务分发与验收】\n\n你的职责：\n1. 任务分发 → 调用 github-trending Agent\n2. 结果验收 → 检查结果完整性和准确性\n3. 分析总结 → 简要分析本周趋势特点\n\n任务内容：\n获取 GitHub 本周热门项目（前5个）：项目名称、简介、语言、Star数\n\n执行流程：\n1. 使用 sessions_spawn 创建 github-trending Agent 会话\n2. 分发任务并明确交付标准\n3. 等待执行结果\n4. 验收：检查是否包含5个项目、信息是否完整\n5. 分析：简要总结本周技术趋势（如：AI工具多、新框架出现等）\n6. 发送最终报告给我（方）\n\n如果执行失败，分析原因并记录。"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1774227600000
+      }
+    },
+    {
+      "id": "5847c26a-1114-47c4-a095-d7f9652705ea",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "HuggingFace Trending Models",
+      "enabled": true,
+      "createdAtMs": 1773549622860,
+      "updatedAtMs": 1773637461746,
+      "schedule": {
+        "expr": "0 13 * * MON",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "【任务分发与验收】\n\n你的职责：\n1. 任务分发 → 调用 huggingface-trending Agent\n2. 结果验收 → 检查结果完整性和准确性\n3. 分析总结 → 简要分析本周模型趋势特点\n\n任务内容：\n获取 HuggingFace 本周热门模型（前5个）：模型名、简介、下载量\n\n执行流程：\n1. 使用 sessions_spawn 创建 huggingface-trending Agent 会话\n2. 分发任务并明确交付标准\n3. 等待执行结果\n4. 验收：检查是否包含5个模型、信息是否完整\n5. 分析：简要总结本周模型趋势（如：多模态热门、代码模型增长等）\n6. 发送最终报告给我（方）\n\n如果执行失败，分析原因并记录。"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1774242000000
+      }
+    },
+    {
+      "id": "aa609bd0-f734-4b89-aaec-0df72c74edb9",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "AI News Daily",
+      "enabled": true,
+      "createdAtMs": 1773549827102,
+      "updatedAtMs": 1773659060356,
+      "schedule": {
+        "expr": "0 19 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "【任务分发与验收】\n\n你的职责：\n1. 任务分发 → 调用 ai-news Agent\n2. 结果验收 → 检查结果完整性和时效性\n3. 分析总结 → 简要分析今日 AI 行业动态\n\n任务内容：\n获取今天 AI 热点新闻（前5条）：标题、一句话简介\n\n执行流程：\n1. 使用 sessions_spawn 创建 ai-news Agent 会话\n2. 分发任务并明确交付标准\n3. 等待执行结果\n4. 验收：检查是否包含5条新闻、信息是否完整、是否今日新闻\n5. 分析：简要总结今日 AI 动态（如：大厂发布、技术突破、行业事件等）\n6. 发送最终报告给我（方）\n\n如果执行失败，分析原因并记录。"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1773745200000
+      }
+    },
+    {
+      "id": "716f2d79-e010-4047-95e2-3b276b1e5908",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "session-cleanup-check",
+      "enabled": true,
+      "createdAtMs": 1773669702340,
+      "updatedAtMs": 1773669702340,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查会话文件大小。请执行以下操作：\n1. 检查 ~/.openclaw/agents/main/sessions/*.jsonl 文件大小\n2. 如果有文件 >500KB 或单条消息 >50KB，列出详细信息\n3. 询问用户是否需要清理\n\n报告格式：\n- 总会话文件大小\n- 最大单条消息大小\n- 建议操作",
+        "model": "bailian/qwen3-coder-next",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1773709200000
+      }
+    }
+  ]
+}
