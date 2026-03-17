@@ -500,7 +500,8 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773759900000
+        "nextRunAtMs": 1773759900000,
+        "runningAtMs": 1773759900014
       }
     }
   ]

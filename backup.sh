@@ -27,7 +27,7 @@ cp ~/.openclaw/workspace/*.md workspace/ 2>/dev/null || true
 
 echo "3. 备份工作项目文件"
 mkdir -p workspace/PROJECTS
-cp ~/.openclaw/workspace/PROJECTS workspace/PROJECTS 2>/dev/null || true
+cp ~/.openclaw/workspace/PROJECTS/*.md workspace/PROJECTS/ 2>/dev/null || true
 
 # 统计文件数量
 FILE_COUNT=$(find . -type f -not -path './.git/*' | wc -l)
