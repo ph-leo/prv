@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-16T14:50:03.755Z"
+    "lastTouchedAt": "2026-03-17T06:39:56.902Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-14T15:36:35.327Z",
@@ -221,6 +221,24 @@
           "theme": "AI Agent",
           "emoji": "📰"
         }
+      },
+      {
+        "id": "programmer",
+        "name": "programmer",
+        "workspace": "/root/.openclaw/workspace-programmer",
+        "agentDir": "/root/.openclaw/agents/programmer/agent"
+      },
+      {
+        "id": "go-coder",
+        "name": "go-coder",
+        "workspace": "/root/.openclaw/workspace-go-coder",
+        "agentDir": "/root/.openclaw/agents/go-coder/agent"
+      },
+      {
+        "id": "medgemma-tester",
+        "name": "medgemma-tester",
+        "workspace": "/root/.openclaw/workspace-medgemma",
+        "agentDir": "/root/.openclaw/agents/medgemma-tester/agent"
       }
     ]
   },
@@ -257,6 +275,27 @@
     "auth": {
       "mode": "token",
       "token": "41b94ffedaa9bc690b18d32b4efed201a02fcfbc51db03a2"
+    }
+  },
+  "skills": {
+    "entries": {
+      "tvclaw": {
+        "enabled": true,
+        "env": {
+          "OPENROUTER_API_KEY": "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",
+          "TRADINGVIEW_SESSION": "5wowl0427gza4pygz7rte21sc30h6ybw",
+          "BROKER_API_KEY": "",
+          "BROKER_API_SECRET": "",
+          "sessionid_sign": "v3:zB+xNjXEcT/BNUF28MPFVNU/qKbTPK4QJBXgtLQA0L0="
+        }
+      },
+      "akshare": {
+        "enabled": true,
+        "env": {
+          "PYTHON_PATH": "/usr/bin/python3",
+          "AKSHARE_INSTALLED": "true"
+        }
+      }
     }
   },
   "plugins": {
