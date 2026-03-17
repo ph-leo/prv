@@ -1,13 +1,19 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-17T06:39:56.902Z"
+    "lastTouchedAt": "2026-03-17T12:22:14.034Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-14T15:36:35.327Z",
     "lastRunVersion": "2026.3.13",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
+  },
+  "logging": {
+    "level": "info",
+    "consoleLevel": "warn",
+    "consoleStyle": "compact",
+    "redactSensitive": "tools"
   },
   "models": {
     "mode": "merge",
@@ -183,6 +189,10 @@
       },
       "compaction": {
         "mode": "safeguard"
+      },
+      "maxConcurrent": 3,
+      "subagents": {
+        "maxConcurrent": 6
       }
     },
     "list": [
@@ -248,6 +258,28 @@
     "restart": true,
     "ownerDisplay": "raw"
   },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": {
+      "mode": "daily",
+      "atHour": 4,
+      "idleMinutes": 120
+    },
+    "threadBindings": {
+      "enabled": true,
+      "idleHours": 24,
+      "maxAgeHours": 168
+    }
+  },
+  "cron": {
+    "enabled": true,
+    "maxConcurrentRuns": 2,
+    "sessionRetention": "12h",
+    "runLog": {
+      "maxBytes": "1mb",
+      "keepLines": 1000
+    }
+  },
   "channels": {
     "dingtalk": {
       "enabled": true,
@@ -271,10 +303,25 @@
     }
   },
   "gateway": {
+    "port": 18789,
     "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "enabled": true,
+      "basePath": "/openclaw"
+    },
     "auth": {
       "mode": "token",
-      "token": "41b94ffedaa9bc690b18d32b4efed201a02fcfbc51db03a2"
+      "token": "41b94ffedaa9bc690b18d32b4efed201a02fcfbc51db03a2",
+      "rateLimit": {
+        "maxAttempts": 20,
+        "windowMs": 60000,
+        "lockoutMs": 300000,
+        "exemptLoopback": true
+      }
+    },
+    "reload": {
+      "mode": "hybrid"
     }
   },
   "skills": {

@@ -163,7 +163,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1773673320000,
+      "updatedAtMs": 1773752020067,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -176,11 +176,19 @@
         "message": "【定时备份任务】\n\n执行 OpenClaw 配置备份到 GitHub：\n\n步骤：\n1. cd ~/openclaw-backup\n2. ./backup.sh\n3. 检查推送结果\n\n只需执行备份，不需要发送消息到群里。\n备份结果保存在 GitHub: git@github.com:ph-leo/prv.git"
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773748800000,
-        "runningAtMs": 1773748800006
+        "nextRunAtMs": 1773835200000,
+        "lastRunAtMs": 1773748800007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 9580,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "runningAtMs": 1773752070114
       }
     },
     {
@@ -242,7 +250,7 @@
       "name": "trading-market-close-am",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773718521145,
+      "updatedAtMs": 1773751781647,
       "schedule": {
         "kind": "cron",
         "expr": "35 11 * * *",
@@ -255,7 +263,9 @@
         "message": "【A股午盘收盘总结】\n\n执行时间：每天 11:35（A股上午收盘后）\n\n任务内容：\n1. 使用 akshare 获取A股上午行情数据\n2. 分析大盘走势（上证指数、深证成指、创业板指）\n3. 热点板块分析\n4. 使用 akshare 获取：\n   - 涨幅超前股票（前5只）\n   - 跌幅较大股票（前5只）\n   - 活跃股票（成交量前5）\n5. 发送到钉钉群\n\n输出格式：\n【午盘总结】\n大盘：涨跌情况\n板块：热点板块\n涨幅前5：代码-名称-涨幅\n跌幅前5：代码-名称-跌幅\n活跃前5：代码-名称-成交量\n\n数据源：akshare（东方财富）"
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
         "nextRunAtMs": 1773804900000,
@@ -276,7 +286,7 @@
       "name": "trading-market-close-pm",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773747001934,
+      "updatedAtMs": 1773751781665,
       "schedule": {
         "kind": "cron",
         "expr": "10 15 * * *",
@@ -289,7 +299,9 @@
         "message": "【A股收盘总结】\n\n执行时间：每天 15:05（A股下午收盘后）\n\n任务内容：\n1. 使用 akshare 获取A股全天行情数据（带重试机制）\n2. 分析大盘走势和涨跌家数\n3. 全天热点板块分析\n4. 北向资金流向\n5. 使用 akshare 获取（多数据源备份）：\n   - 涨幅超前股票（前5只）- 失败重试3次\n   - 跌幅较大股票（前5只）- 失败重试3次\n   - 活跃股票（成交量前5）- 失败重试3次\n6. 明日展望\n7. 发送到钉钉群\n\n数据获取优化：\n- 重试机制：失败自动重试3次\n- 多数据源：东方财富+同花顺备份\n- 延迟获取：15:10执行（收盘后5分钟）\n- 容错处理：部分失败也发送报告\n\n输出格式：\n【收盘总结】\n大盘：全天涨跌情况\n涨跌家数：涨xx家 / 跌xx家\n板块：热点板块回顾\n北向资金：流入/流出情况\n\n涨幅前5：代码-名称-涨幅\n跌幅前5：代码-名称-跌幅\n活跃前5：代码-名称-成交量\n\n明日展望：简要分析\n\n数据源：akshare（东方财富/同花顺）"
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
         "nextRunAtMs": 1773817800000,
@@ -435,7 +447,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1773734605278,
+      "updatedAtMs": 1773748981711,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -454,11 +466,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773748973173,
-        "lastRunAtMs": 1773734573178,
+        "nextRunAtMs": 1773792173173,
+        "lastRunAtMs": 1773748973181,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 32100,
+        "lastDurationMs": 8530,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
