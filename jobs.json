@@ -482,7 +482,7 @@
       "name": "A股收盘总结",
       "enabled": true,
       "createdAtMs": 1773746998219,
-      "updatedAtMs": 1773746998219,
+      "updatedAtMs": 1773760200027,
       "schedule": {
         "kind": "every",
         "everyMs": 86400000,
@@ -500,8 +500,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773759900000,
-        "runningAtMs": 1773759900014
+        "nextRunAtMs": 1773846300021,
+        "lastRunAtMs": 1773759900021,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 300006,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1
       }
     }
   ]

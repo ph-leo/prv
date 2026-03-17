@@ -20,14 +20,19 @@ echo "2. 备份 Agent 配置..."
 mkdir -p agents
 cp ~/.openclaw/agents/*/IDENTITY.md agents/ 2>/dev/null || true
 
-# 3. 备份工作区核心文件
+# 3. 备份 memory 身份
+echo "2. 备份 memory 配置..."
+mkdir -p workspace/memory
+cp ~/.openclaw/workspace/memory/*.md workspace/memory/ 2>/dev/null || true
+
+# 4. 备份工作区核心文件
 echo "3. 备份工作区..."
 mkdir -p workspace
 cp ~/.openclaw/workspace/*.md workspace/ 2>/dev/null || true
-
-echo "3. 备份工作项目文件"
+# 5. 备份工作区核心文件
+echo "5. 备份工作项目文件"
 mkdir -p workspace/PROJECTS
-cp ~/.openclaw/workspace/PROJECTS/ workspace/PROJECTS/ 2>/dev/null || true
+cp -r ~/.openclaw/workspace/PROJECTS/ workspace/PROJECTS/ 2>/dev/null || true
 
 # 统计文件数量
 FILE_COUNT=$(find . -type f -not -path './.git/*' | wc -l)
