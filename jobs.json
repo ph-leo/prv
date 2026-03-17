@@ -92,7 +92,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1773745422964,
+      "updatedAtMs": 1773752185294,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -111,14 +111,13 @@
       },
       "state": {
         "nextRunAtMs": 1773831600000,
-        "lastRunAtMs": 1773745200007,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 222957,
-        "lastError": "⚠️ ✉️ Message failed",
+        "lastRunAtMs": 1773752180677,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 4617,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 0
       }
     },
     {
@@ -163,7 +162,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1773752020067,
+      "updatedAtMs": 1773752079287,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -182,13 +181,13 @@
       },
       "state": {
         "nextRunAtMs": 1773835200000,
-        "lastRunAtMs": 1773748800007,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 9580,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1773752070114
+        "lastRunAtMs": 1773752070114,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 9173,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
