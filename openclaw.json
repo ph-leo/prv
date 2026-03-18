@@ -180,6 +180,13 @@
       "models": {
         "bailian/qwen3-coder-next": {},
         "bailian/qwen3.5-plus": {},
+        "programmer": {}
+      },
+      "subagents": {
+        "maxConcurrent": 6
+      }
+    }
+  },
         "bailian/qwen3-max-2026-01-23": {},
         "bailian/qwen3-coder-plus": {},
         "bailian/MiniMax-M2.5": {},

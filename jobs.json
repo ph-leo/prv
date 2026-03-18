@@ -163,7 +163,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1773752079287,
+      "updatedAtMs": 1773835209650,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -181,15 +181,14 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773835200000,
-        "lastRunAtMs": 1773752070114,
+        "nextRunAtMs": 1773921600000,
+        "lastRunAtMs": 1773835200009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9173,
+        "lastDurationMs": 9641,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1773835200007
+        "lastDelivered": true
       }
     },
     {
@@ -463,7 +462,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1773821311024,
+      "updatedAtMs": 1773835460858,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -482,11 +481,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773835373173,
-        "lastRunAtMs": 1773820973180,
+        "nextRunAtMs": 1773878573173,
+        "lastRunAtMs": 1773835373182,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 337844,
+        "lastDurationMs": 87676,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -499,7 +498,7 @@
       "name": "A股收盘总结",
       "enabled": true,
       "createdAtMs": 1773746998219,
-      "updatedAtMs": 1773760200027,
+      "updatedAtMs": 1773846600034,
       "schedule": {
         "kind": "every",
         "everyMs": 86400000,
@@ -517,15 +516,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773846300021,
-        "lastRunAtMs": 1773759900021,
+        "nextRunAtMs": 1773932700027,
+        "lastRunAtMs": 1773846300027,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 300006,
-        "lastError": "cron: job execution timed out",
+        "lastDurationMs": 300007,
         "lastErrorReason": "timeout",
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 2,
+        "lastError": "cron: job execution timed out"
       }
     }
   ]
