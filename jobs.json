@@ -92,7 +92,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1773752185294,
+      "updatedAtMs": 1773831658485,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -110,11 +110,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773831600000,
-        "lastRunAtMs": 1773752180677,
+        "nextRunAtMs": 1773918000000,
+        "lastRunAtMs": 1773831600006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4617,
+        "lastDurationMs": 58479,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -127,7 +127,7 @@
       "name": "session-cleanup-check",
       "enabled": true,
       "createdAtMs": 1773669702340,
-      "updatedAtMs": 1773709220567,
+      "updatedAtMs": 1773795660059,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -145,14 +145,15 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773795600000,
-        "lastRunAtMs": 1773709200005,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 20562,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1773882000000,
+        "lastRunAtMs": 1773795600016,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 60043,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     {
@@ -187,7 +188,8 @@
         "lastDurationMs": 9173,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1773835200007
       }
     },
     {
@@ -197,7 +199,7 @@
       "name": "trading-signals-morning",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773707493353,
+      "updatedAtMs": 1773793893079,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -213,7 +215,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773793800000
+        "nextRunAtMs": 1773880200000,
+        "lastRunAtMs": 1773793800004,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 93075,
+        "lastError": "DingTalk message requires --to <conversationId>",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     },
     {
@@ -249,7 +258,7 @@
       "name": "trading-market-close-am",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773751781647,
+      "updatedAtMs": 1773805500369,
       "schedule": {
         "kind": "cron",
         "expr": "35 11 * * *",
@@ -267,15 +276,16 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773804900000,
-        "lastRunAtMs": 1773718500004,
+        "nextRunAtMs": 1773891300000,
+        "lastRunAtMs": 1773804900006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 21141,
+        "lastDurationMs": 600363,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ ✉️ Message failed"
+        "consecutiveErrors": 2,
+        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+        "lastErrorReason": "timeout"
       }
     },
     {
@@ -285,7 +295,7 @@
       "name": "trading-market-close-pm",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773751781665,
+      "updatedAtMs": 1773818209988,
       "schedule": {
         "kind": "cron",
         "expr": "10 15 * * *",
@@ -303,14 +313,15 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773817800000,
-        "lastRunAtMs": 1773746993666,
+        "nextRunAtMs": 1773904200000,
+        "lastRunAtMs": 1773817800017,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 8268,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "DingTalk message requires --to <conversationId>"
+        "lastDurationMs": 409971,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ 📝 Edit: in /usr/local/bin/a_share_close_summary.py (400 chars) failed",
+        "lastDelivered": true
       }
     },
     {
@@ -320,7 +331,7 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1773743412335,
+      "updatedAtMs": 1773797413104,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -336,13 +347,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773797400000,
-        "lastRunAtMs": 1773742800016,
+        "nextRunAtMs": 1773883800000,
+        "lastRunAtMs": 1773797400006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 612319,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 13098,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -353,7 +364,7 @@
       "name": "trading-s1-monitor-1",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1773708153708,
+      "updatedAtMs": 1773799493177,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -369,7 +380,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773799200000
+        "nextRunAtMs": 1773885600000,
+        "lastRunAtMs": 1773799200005,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 293172,
+        "lastError": "DingTalk message requires --to <conversationId>",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     },
     {
@@ -379,7 +397,7 @@
       "name": "trading-s1-monitor-2",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1773727235981,
+      "updatedAtMs": 1773813601895,
       "schedule": {
         "kind": "cron",
         "expr": "0 14 * * *",
@@ -395,13 +413,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773813600000,
-        "lastRunAtMs": 1773727200017,
+        "nextRunAtMs": 1773900000000,
+        "lastRunAtMs": 1773813600006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35964,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 1889,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -412,7 +430,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1773716148322,
+      "updatedAtMs": 1773797521741,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -428,15 +446,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773797400000,
-        "lastRunAtMs": 1773715812738,
+        "nextRunAtMs": 1773883800000,
+        "lastRunAtMs": 1773797400006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 335584,
-        "lastError": "⚠️ 📝 Edit: in ~/.openclaw/workspace/memory/2026-03-17.md (859 chars) failed",
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1
+        "lastDurationMs": 121735,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "DingTalk message requires --to <conversationId>"
       }
     },
     {
@@ -446,7 +463,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1773748981711,
+      "updatedAtMs": 1773821311024,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -465,11 +482,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773792173173,
-        "lastRunAtMs": 1773748973181,
+        "nextRunAtMs": 1773835373173,
+        "lastRunAtMs": 1773820973180,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8530,
+        "lastDurationMs": 337844,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
