@@ -1,0 +1,5 @@
+bind [127.0.0.1]:55555: Address already in use
+channel_setup_fwd_listener_tcpip: cannot listen to port: 55555
+bind [127.0.0.1]:12222: Address already in use
+channel_setup_fwd_listener_tcpip: cannot listen to port: 12222
+Could not request local forwarding.

@@ -1,31 +1,29 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-远程修改 MedGemma 测试脚本 - 添加新 Prompt
+本地修改测试脚本，添加新的 Prompt
 """
+import re
 
 def main():
-    import os
-    import re
-    
     print("=" * 70)
-    print("远程修改 MedGemma 测试脚本 - 添加新 Prompt")
+    print("本地修改 MedGemma 测试脚本 - 添加新 Prompt")
     print("=" * 70)
     
-    orig_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup_20260318.py'
-    out_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_opt.py'
+    orig_path = r'/e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup.py'
+    out_path = r'/e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py'
     
     print(f"\n读取脚本: {orig_path}")
     
     try:
         with open(orig_path, 'r', encoding='utf-8', errors='ignore') as f:
             code = f.read()
-        print("READMEK 脚本读取成功")
     except Exception as e:
-        print(f"ERROR 读取失败: {e}")
+        print(f"❌ 读取失败: {e}")
         return
     
     # 添加 Prompt 常量定义
-    prompt_constants = r'''
+    prompt_constants = '''
 # 骨折识别专用Prompt V7.4
 FRACTURE_PROMPT_V74 = """# 骨折识别专用Prompt V7.4
 
@@ -81,38 +79,21 @@ PULMONARY_PROMPT_V74 = """# 肺部病变识别专用Prompt V7.4
    边界: ___
    伴随征象: ___
 """
-
-# 骨骼通用Prompt V7.4 (用于脊柱/关节等)
-SKELETAL_PROMPT_V74 = """# 骨骼通用Prompt V7.4
-
-1. 骨皮质连续性检查
-2. 骨密度检查
-3. 骨轮廓检查
-4. 关节间隙检查
-
-5. 强制报告格式
-   部位: ___
-   性质: ___
-   大小: ___
-   密度: ___
-   边界: ___
-   伴随征象: ___
-"""
 '''
     
     # 插入 Marker
     insert_marker = "# ==================== 扩展映射规则 V7.4 ===================="
     if insert_marker in code:
         code = code.replace(insert_marker, prompt_constants + "\n" + insert_marker)
-        print("OK 插入 Prompt 常量")
+        print("✅ 已插入 Prompt 常量")
     else:
-        print("WARN 未找到插入Marker")
+        print("⚠️ 未找到插入Marker")
     
     # 修改 get_prompt 函数签名
     old_signature = "def get_prompt(body_part):"
     new_signature = "def get_prompt(body_part, use_v74=True):"
     code = code.replace(old_signature, new_signature)
-    print("OK 修改函数签名为 use_v74=True")
+    print("✅ 已修改函数签名为 use_v74=True")
     
     # 修改 prompt 选择逻辑
     old_line = "    body_lower = body_part.lower()\n    if any(kw in body_lower for kw in ["
@@ -125,21 +106,18 @@ SKELETAL_PROMPT_V74 = """# 骨骼通用Prompt V7.4
         # 肺部关键词
         if any(kw in body_lower for kw in ['肺', '胸', '支气管', '肺炎']):
             return PULMONARY_PROMPT_V74, 'pulmonary'
-        # 骨骼关键词（脊柱/关节）
-        if any(kw in body_lower for kw in ['脊柱', '颈椎', '胸椎', '腰椎', '关节', '骨']):
-            return SKELETAL_PROMPT_V74, 'bone'
     if any(kw in body_lower for kw in ['''
     
     code = code.replace(old_line, new_lines)
-    print("OK 修改 prompt 选择逻辑")
+    print("✅ 已修改 prompt 选择逻辑")
     
     # 写入新脚本
     try:
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(code)
-        print(f"OK 脚本已保存: {out_path}")
+        print(f"✅ 脚本已保存: {out_path}")
     except Exception as e:
-        print(f"ERROR 保存失败: {e}")
+        print(f"❌ 保存失败: {e}")
         return
     
     # 统计
@@ -150,24 +128,8 @@ SKELETAL_PROMPT_V74 = """# 骨骼通用Prompt V7.4
     print(f"  - FRACTURE_PROMPT_V74: {fracture_count} 个")
     print(f"  - PULMONARY_PROMPT_V74: {pulmonary_count} 个")
     
-    # 验证修改
-    print("\n验证修改...")
-    test_cases = [
-        ("右手骨折", "fracture"),
-        ("胸部CT", "pulmonary"),
-        ("左腿骨折", "fracture"),
-        ("肺部炎症", "pulmonary"),
-        ("颈椎检查", "bone"),
-        ("胸廓对称", "pulmonary"),
-        ("腰椎检查", "bone"),
-        ("膝关节", "bone"),
-    ]
-    
-    for 部位, expected in test_cases:
-        print(f"  - {部位} -> {expected}")
-    
     print("\n" + "=" * 70)
-    print("OK 完成！")
+    print("✅ 优化完成！")
     print("=" * 70)
 
 if __name__ == '__main__':

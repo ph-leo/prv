@@ -32,22 +32,22 @@ def main():
     
     # 2. 备份脚本
     print("\n[2/3] 备份脚本...")
-    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "cp /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup.py 2>&1"', shell=True, capture_output=True, text=True)
+    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "cp /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup.py 2>&1"', shell=True, capture_output=True, text=True, errors='ignore')
     print("备份完成")
     
     # 3. 执行修改
     print("\n[3/3] 执行修改...")
     cmd = f'ssh -p 12222 D@127.0.0.1 "python -c \\"{modify_code}\\""'
-    r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=120)
+    r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=120, errors='ignore')
     print(r.stdout)
     if r.stderr:
         print(f"错误: {r.stderr}")
     
     # 4. 检查结果
     print("\n检查修改结果...")
-    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "grep -c FRACTURE_PROMPT_V74 /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py"', shell=True, capture_output=True, text=True)
+    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "grep -c FRACTURE_PROMPT_V74 /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py"', shell=True, capture_output=True, text=True, errors='ignore')
     print(f"FRACTURE_PROMPT_V74 出现次数: {r.stdout.strip()}")
-    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "grep -c PULMONARY_PROMPT_V74 /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py"', shell=True, capture_output=True, text=True)
+    r = subprocess.run('ssh -p 12222 D@127.0.0.1 "grep -c PULMONARY_PROMPT_V74 /e/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases.py"', shell=True, capture_output=True, text=True, errors='ignore')
     print(f"PULMONARY_PROMPT_V74 出现次数: {r.stdout.strip()}")
     
     print("\n" + "=" * 70)

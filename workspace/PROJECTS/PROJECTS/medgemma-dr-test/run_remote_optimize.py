@@ -1,31 +1,38 @@
 # -*- coding: utf-8 -*-
 """
-远程修改 MedGemma 测试脚本 - 添加新 Prompt
+在开发电脑上运行优化脚本
 """
+import subprocess
 
 def main():
-    import os
-    import re
-    
     print("=" * 70)
-    print("远程修改 MedGemma 测试脚本 - 添加新 Prompt")
+    print("在开发电脑上运行优化脚本")
     print("=" * 70)
     
-    orig_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup_20260318.py'
-    out_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_opt.py'
-    
-    print(f"\n读取脚本: {orig_path}")
-    
-    try:
-        with open(orig_path, 'r', encoding='utf-8', errors='ignore') as f:
-            code = f.read()
-        print("READMEK 脚本读取成功")
-    except Exception as e:
-        print(f"ERROR 读取失败: {e}")
-        return
-    
-    # 添加 Prompt 常量定义
-    prompt_constants = r'''
+    # SSH 执行 Python 代码
+    script_code = r'''
+import os
+import re
+
+print("=" * 70)
+print("远程修改 MedGemma 测试脚本 - 添加新 Prompt")
+print("=" * 70)
+
+orig_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_backup_20260318.py'
+out_path = r'e:/ai_test_MedGemma/ai/other/scripts/full_test_v7.4_300cases_opt.py'
+
+print(f"\n读取脚本: {orig_path}")
+
+try:
+    with open(orig_path, 'r', encoding='utf-8', errors='ignore') as f:
+        code = f.read()
+    print("READMEK 脚本读取成功")
+except Exception as e:
+    print(f"ERROR 读取失败: {e}")
+    exit()
+
+# 添加 Prompt 常量定义
+prompt_constants = r'''
 # 骨折识别专用Prompt V7.4
 FRACTURE_PROMPT_V74 = """# 骨折识别专用Prompt V7.4
 
@@ -169,6 +176,23 @@ SKELETAL_PROMPT_V74 = """# 骨骼通用Prompt V7.4
     print("\n" + "=" * 70)
     print("OK 完成！")
     print("=" * 70)
+'''
+    
+    # 构建远程执行命令
+    # 将脚本编码为 base64
+    import base64
+    encoded_script = base64.b64encode(script_code.encode('utf-8')).decode('utf-8')
+    
+    # 执行命令
+    print("\n执行远程脚本...")
+    cmd = f'ssh -p 12222 D@127.0.0.1 "echo {encoded_script} | base64 -d | python"'
+    
+    print(f"命令: {cmd[:200]}...")
+    
+    r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=120, errors='ignore')
+    print(r.stdout)
+    if r.stderr:
+        print(f"错误: {r.stderr}")
 
 if __name__ == '__main__':
     main()
