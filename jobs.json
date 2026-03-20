@@ -96,7 +96,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1773918006014,
+      "updatedAtMs": 1774004410042,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -114,11 +114,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774004400000,
-        "lastRunAtMs": 1773918000007,
+        "nextRunAtMs": 1774090800000,
+        "lastRunAtMs": 1774004400008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6007,
+        "lastDurationMs": 10034,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -131,7 +131,7 @@
       "name": "session-cleanup-check",
       "enabled": true,
       "createdAtMs": 1773669702340,
-      "updatedAtMs": 1773882017178,
+      "updatedAtMs": 1773968420713,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -149,13 +149,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773968400000,
-        "lastRunAtMs": 1773882000006,
+        "nextRunAtMs": 1774054800000,
+        "lastRunAtMs": 1773968400006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 17172,
+        "lastDurationMs": 20707,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 3,
         "lastError": "DingTalk message requires --to <conversationId>"
       }
     },
@@ -166,7 +166,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1773835209650,
+      "updatedAtMs": 1773921617894,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -184,15 +184,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773921600000,
-        "lastRunAtMs": 1773835200009,
+        "nextRunAtMs": 1774008000000,
+        "lastRunAtMs": 1773921600007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9641,
+        "lastDurationMs": 17887,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1773921600006
+        "runningAtMs": 1774008000007
       }
     },
     {
@@ -220,14 +220,13 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773966600000,
+        "nextRunAtMs": 1774053000000,
         "lastRunAtMs": 1773880200006,
         "lastRunStatus": "error",
         "lastStatus": "error",
         "lastDurationMs": 77351,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "DingTalk message requires --to <conversationId>"
+        "consecutiveErrors": 2
       }
     },
     {
@@ -265,7 +264,7 @@
       "name": "trading-market-close-am",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773891905441,
+      "updatedAtMs": 1773977920325,
       "schedule": {
         "kind": "cron",
         "expr": "35 11 * * *",
@@ -283,11 +282,11 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773977700000,
-        "lastRunAtMs": 1773891300006,
+        "nextRunAtMs": 1774064100000,
+        "lastRunAtMs": 1773977700006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 605435,
+        "lastDurationMs": 220319,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -300,7 +299,7 @@
       "name": "trading-market-close-pm",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1773904731550,
+      "updatedAtMs": 1773990630737,
       "schedule": {
         "kind": "cron",
         "expr": "10 15 * * *",
@@ -318,11 +317,11 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773990600000,
-        "lastRunAtMs": 1773904200007,
+        "nextRunAtMs": 1774077000000,
+        "lastRunAtMs": 1773990600005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 531543,
+        "lastDurationMs": 30732,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -335,7 +334,7 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1773883805798,
+      "updatedAtMs": 1773970203631,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -351,13 +350,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773970200000,
-        "lastRunAtMs": 1773883800007,
+        "nextRunAtMs": 1774056600000,
+        "lastRunAtMs": 1773970200011,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 5791,
+        "lastDurationMs": 3620,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
+        "consecutiveErrors": 2,
         "lastError": "DingTalk message requires --to <conversationId>"
       }
     },
@@ -368,7 +367,7 @@
       "name": "trading-s1-monitor-1",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1773885602813,
+      "updatedAtMs": 1773972305241,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -386,14 +385,15 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773972000000,
-        "lastRunAtMs": 1773885600008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 2805,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
+        "nextRunAtMs": 1774058400000,
+        "lastRunAtMs": 1773972000007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 305234,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -403,7 +403,7 @@
       "name": "trading-s1-monitor-2",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1773900002401,
+      "updatedAtMs": 1773986401828,
       "schedule": {
         "kind": "cron",
         "expr": "0 14 * * *",
@@ -421,11 +421,11 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773986400000,
-        "lastRunAtMs": 1773900000007,
+        "nextRunAtMs": 1774072800000,
+        "lastRunAtMs": 1773986400015,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 2394,
+        "lastDurationMs": 1813,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -438,7 +438,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1773883853761,
+      "updatedAtMs": 1773970799871,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -456,14 +456,15 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1773970200000,
-        "lastRunAtMs": 1773883800008,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 53753,
+        "nextRunAtMs": 1774056600000,
+        "lastRunAtMs": 1773970203631,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 596240,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -473,7 +474,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1773907384153,
+      "updatedAtMs": 1773993797599,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -492,11 +493,11 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1773921773173,
-        "lastRunAtMs": 1773907373180,
+        "nextRunAtMs": 1774008173173,
+        "lastRunAtMs": 1773993773182,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10973,
+        "lastDurationMs": 24417,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -509,7 +510,7 @@
       "name": "A股收盘总结",
       "enabled": true,
       "createdAtMs": 1773746998219,
-      "updatedAtMs": 1773846600034,
+      "updatedAtMs": 1773933000041,
       "schedule": {
         "kind": "every",
         "everyMs": 86400000,
@@ -527,14 +528,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773932700027,
-        "lastRunAtMs": 1773846300027,
+        "nextRunAtMs": 1774019100035,
+        "lastRunAtMs": 1773932700035,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 300007,
+        "lastDurationMs": 300006,
         "lastErrorReason": "timeout",
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 3,
         "lastError": "cron: job execution timed out"
       }
     },
@@ -545,7 +546,7 @@
       "name": "stock-market-close-summary",
       "enabled": true,
       "createdAtMs": 1773904593758,
-      "updatedAtMs": 1773904593758,
+      "updatedAtMs": 1773990646312,
       "schedule": {
         "expr": "10 15 * * *",
         "kind": "cron",
@@ -561,7 +562,13 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1773990600000
+        "nextRunAtMs": 1774077000000,
+        "lastRunAtMs": 1773990630737,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 15575,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     }
   ]
