@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-17T06:39:56.902Z"
+    "lastTouchedAt": "2026-03-22T15:22:23.799Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-14T15:36:35.327Z",
@@ -239,6 +239,13 @@
         "name": "medgemma-tester",
         "workspace": "/root/.openclaw/workspace-medgemma",
         "agentDir": "/root/.openclaw/agents/medgemma-tester/agent"
+      },
+      {
+        "id": "xiaohongshu-publisher",
+        "name": "xiaohongshu-publisher",
+        "workspace": "/root/.openclaw/workspace-xiaohongshu",
+        "agentDir": "/root/.openclaw/agents/xiaohongshu-publisher/agent",
+        "model": "bailian/qwen3-coder-next"
       }
     ]
   },
