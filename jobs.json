@@ -110,7 +110,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1774609275176,
+      "updatedAtMs": 1774695621702,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -128,14 +128,14 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774695600000,
-        "lastRunAtMs": 1774609212905,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 62271,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1774782000000,
+        "lastRunAtMs": 1774695600004,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21698,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -145,7 +145,7 @@
       "name": "session-cleanup-check",
       "enabled": true,
       "createdAtMs": 1773669702340,
-      "updatedAtMs": 1774573220324,
+      "updatedAtMs": 1774659620907,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -163,14 +163,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774659600000,
-        "lastRunAtMs": 1774573200003,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 20321,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1774746000000,
+        "lastRunAtMs": 1774659600007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 20900,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -180,7 +180,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1774526416294,
+      "updatedAtMs": 1774613177413,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -198,15 +198,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774612800000,
-        "lastRunAtMs": 1774526400006,
+        "nextRunAtMs": 1774699200000,
+        "lastRunAtMs": 1774613156613,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16288,
+        "lastDurationMs": 20800,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1774613156612
+        "runningAtMs": 1774699298790
       }
     },
     {
@@ -216,7 +216,7 @@
       "name": "trading-signals-morning",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1774571521267,
+      "updatedAtMs": 1774657894252,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -234,15 +234,14 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774657800000,
-        "lastRunAtMs": 1774571400030,
+        "nextRunAtMs": 1774744200000,
+        "lastRunAtMs": 1774657800005,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 121237,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "⚠️ ✉️ Message failed"
+        "lastDurationMs": 94247,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -322,7 +321,7 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1774575061591,
+      "updatedAtMs": 1774661831474,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -338,15 +337,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774661400000,
-        "lastRunAtMs": 1774575000006,
+        "nextRunAtMs": 1774747800000,
+        "lastRunAtMs": 1774661445968,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 61585,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "⚠️ ✉️ Message failed"
+        "lastDurationMs": 385506,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -356,7 +354,7 @@
       "name": "trading-s1-monitor-1",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774576849252,
+      "updatedAtMs": 1774663270675,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -374,15 +372,14 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774663200000,
-        "lastRunAtMs": 1774576800003,
+        "nextRunAtMs": 1774749600000,
+        "lastRunAtMs": 1774663200006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 49249,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "⚠️ ✍️ Write failed"
+        "lastDurationMs": 70669,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -392,7 +389,7 @@
       "name": "trading-s1-monitor-2",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774591355532,
+      "updatedAtMs": 1774677602767,
       "schedule": {
         "kind": "cron",
         "expr": "0 14 * * *",
@@ -410,13 +407,13 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774677600000,
-        "lastRunAtMs": 1774591200003,
+        "nextRunAtMs": 1774764000000,
+        "lastRunAtMs": 1774677600007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 155529,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 2760,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     },
@@ -427,7 +424,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1774575071130,
+      "updatedAtMs": 1774662070177,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -445,14 +442,14 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774661400000,
-        "lastRunAtMs": 1774575061591,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 9539,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
+        "nextRunAtMs": 1774747800000,
+        "lastRunAtMs": 1774661831474,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 238703,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -462,7 +459,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1774598605695,
+      "updatedAtMs": 1774684981753,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -481,15 +478,14 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774612973173,
-        "lastRunAtMs": 1774598573177,
+        "nextRunAtMs": 1774699373173,
+        "lastRunAtMs": 1774684973178,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 32518,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1774613156612
+        "lastDurationMs": 8575,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 3,
+        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
     {
@@ -533,7 +529,7 @@
       "name": "stock-market-close-summary",
       "enabled": true,
       "createdAtMs": 1773904593758,
-      "updatedAtMs": 1774595407869,
+      "updatedAtMs": 1774681805491,
       "schedule": {
         "expr": "10 15 * * *",
         "kind": "cron",
@@ -546,11 +542,11 @@
         "text": "执行A股收盘总结脚本：python3 /root/.openclaw/workspace/scripts/stock_market_close_summary.py"
       },
       "state": {
-        "nextRunAtMs": 1774681800000,
-        "lastRunAtMs": 1774595400002,
+        "nextRunAtMs": 1774768200000,
+        "lastRunAtMs": 1774681800004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7867,
+        "lastDurationMs": 5487,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -562,7 +558,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1774137776434,
-      "updatedAtMs": 1774598421501,
+      "updatedAtMs": 1774684811030,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23/4 * * *",
@@ -575,14 +571,14 @@
         "text": "[服务器资源监控] 开始检查系统资源使用情况...\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）"
       },
       "state": {
-        "nextRunAtMs": 1774612800000,
-        "lastRunAtMs": 1774598400006,
+        "nextRunAtMs": 1774699200000,
+        "lastRunAtMs": 1774684800008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21495,
+        "lastDurationMs": 11022,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "runningAtMs": 1774613156612
+        "runningAtMs": 1774699298790
       }
     },
     {
@@ -592,7 +588,7 @@
       "name": "MedGemma V7.4 优化测试进度汇报",
       "enabled": true,
       "createdAtMs": 1774192759721,
-      "updatedAtMs": 1774609210898,
+      "updatedAtMs": 1774695402586,
       "schedule": {
         "anchorMs": 1742645100000,
         "everyMs": 3600000,
@@ -609,14 +605,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774612810898,
-        "lastRunAtMs": 1774609175854,
+        "nextRunAtMs": 1774699002586,
+        "lastRunAtMs": 1774695380324,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 35044,
+        "lastDurationMs": 22262,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 10,
-        "runningAtMs": 1774613156612
+        "consecutiveErrors": 33
       }
     },
     {
@@ -727,7 +722,7 @@
       "name": "MedGemma V7.4 SSH状态检查",
       "enabled": true,
       "createdAtMs": 1774580873846,
-      "updatedAtMs": 1774613154547,
+      "updatedAtMs": 1774695378120,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -743,14 +738,43 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774616754547,
-        "lastRunAtMs": 1774612773801,
+        "nextRunAtMs": 1774699673846,
+        "lastRunAtMs": 1774694942703,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 380746,
+        "lastDurationMs": 435417,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 11,
-        "lastError": "DingTalk message requires --to <conversationId>"
+        "consecutiveErrors": 33
+      }
+    },
+    {
+      "id": "522269d2-bf89-4aa7-aa8d-815809c8fc91",
+      "agentId": "main",
+      "sessionKey": "agent:main:cron:e5f6a7b8-c9d0-1234-efab-567890123456",
+      "name": "A股模拟交易：重试数据获取",
+      "enabled": true,
+      "createdAtMs": 1774661829316,
+      "updatedAtMs": 1774697248310,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1713934200000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "【A股模拟交易 - 数据重试】\n当前无法获取A股实时数据（API受限）。\n\n已生成详细分析报告：\n- /PROJECTS/stock-trading-sim/DATA_20260328.md\n\n问题类型：✅ 网络限制 / ❌ API不可用\n\n可能的解决方案：\n1. 启用代理服务（当前端口 55555/12222 不可用）\n2. 使用浏览器自动化工具模拟登录\n3. 联系API提供方申请正式API Key\n4. 使用付费数据服务\n\n请选择后续操作：\nA: 等待网络改善后重试\nB: 使用缓存数据生成模拟交易\nC: 跳过今日交易\n\n// 更多信息请查看报告文件"
+      },
+      "state": {
+        "nextRunAtMs": 1774699039783,
+        "lastRunAtMs": 1774697239783,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8527,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "runningAtMs": 1774699298790
       }
     }
   ]

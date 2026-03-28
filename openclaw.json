@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-22T15:22:23.799Z"
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-28T12:01:36.973Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-14T15:36:35.327Z",
@@ -20,6 +20,7 @@
           {
             "id": "qwen3.5-plus",
             "name": "qwen3.5-plus",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text",
@@ -38,27 +39,9 @@
             }
           },
           {
-            "id": "qwen3-max-2026-01-23",
-            "name": "qwen3-max-2026-01-23",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 262144,
-            "maxTokens": 65536,
-            "compat": {
-              "thinkingFormat": "qwen"
-            }
-          },
-          {
             "id": "qwen3-coder-next",
             "name": "qwen3-coder-next",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text"
@@ -70,27 +53,12 @@
               "cacheWrite": 0
             },
             "contextWindow": 262144,
-            "maxTokens": 65536
-          },
-          {
-            "id": "qwen3-coder-plus",
-            "name": "qwen3-coder-plus",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 1000000,
             "maxTokens": 65536
           },
           {
             "id": "MiniMax-M2.5",
             "name": "MiniMax-M2.5",
+            "api": "openai-completions",
             "reasoning": false,
             "input": [
               "text"
@@ -103,64 +71,6 @@
             },
             "contextWindow": 196608,
             "maxTokens": 32768
-          },
-          {
-            "id": "glm-5",
-            "name": "glm-5",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 202752,
-            "maxTokens": 16384,
-            "compat": {
-              "thinkingFormat": "qwen"
-            }
-          },
-          {
-            "id": "glm-4.7",
-            "name": "glm-4.7",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 202752,
-            "maxTokens": 16384,
-            "compat": {
-              "thinkingFormat": "qwen"
-            }
-          },
-          {
-            "id": "kimi-k2.5",
-            "name": "kimi-k2.5",
-            "reasoning": false,
-            "input": [
-              "text",
-              "image"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 262144,
-            "maxTokens": 32768,
-            "compat": {
-              "thinkingFormat": "qwen"
-            }
           }
         ]
       }
@@ -174,12 +84,7 @@
       "models": {
         "bailian/qwen3-coder-next": {},
         "bailian/qwen3.5-plus": {},
-        "bailian/qwen3-max-2026-01-23": {},
-        "bailian/qwen3-coder-plus": {},
-        "bailian/MiniMax-M2.5": {},
-        "bailian/glm-5": {},
-        "bailian/glm-4.7": {},
-        "bailian/kimi-k2.5": {}
+        "bailian/MiniMax-M2.5": {}
       },
       "compaction": {
         "mode": "safeguard"
@@ -193,34 +98,19 @@
         "id": "github-trending",
         "name": "github-trending",
         "workspace": "/root/.openclaw/workspace-github",
-        "agentDir": "/root/.openclaw/agents/github-trending/agent",
-        "identity": {
-          "name": "GitHub趋势助手",
-          "theme": "AI Agent",
-          "emoji": "📊"
-        }
+        "agentDir": "/root/.openclaw/agents/github-trending/agent"
       },
       {
         "id": "huggingface-trending",
         "name": "huggingface-trending",
         "workspace": "/root/.openclaw/workspace-huggingface",
-        "agentDir": "/root/.openclaw/agents/huggingface-trending/agent",
-        "identity": {
-          "name": "HuggingFace趋势助手",
-          "theme": "AI Agent",
-          "emoji": "🤗"
-        }
+        "agentDir": "/root/.openclaw/agents/huggingface-trending/agent"
       },
       {
         "id": "ai-news",
         "name": "ai-news",
         "workspace": "/root/.openclaw/workspace-ainews",
-        "agentDir": "/root/.openclaw/agents/ai-news/agent",
-        "identity": {
-          "name": "AI新闻助手",
-          "theme": "AI Agent",
-          "emoji": "📰"
-        }
+        "agentDir": "/root/.openclaw/agents/ai-news/agent"
       },
       {
         "id": "programmer",
@@ -273,7 +163,7 @@
       "appSecret": "SEF3uDzxzEenDZmcalXmgbnK0kZwhAlW",
       "connectionMode": "websocket",
       "requireMention": true,
-      "groupPolicy": "open",
+      "groupPolicy": "allowlist",
       "enabled": false
     }
   },
@@ -292,8 +182,7 @@
           "OPENROUTER_API_KEY": "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",
           "TRADINGVIEW_SESSION": "5wowl0427gza4pygz7rte21sc30h6ybw",
           "BROKER_API_KEY": "",
-          "BROKER_API_SECRET": "",
-          "sessionid_sign": "v3:zB+xNjXEcT/BNUF28MPFVNU/qKbTPK4QJBXgtLQA0L0="
+          "BROKER_API_SECRET": ""
         }
       },
       "akshare": {
@@ -307,33 +196,18 @@
   },
   "plugins": {
     "allow": [
-      "dingtalk",
-      "openclaw-lark"
+      "openclaw-lark",
+      "dingtalk"
     ],
     "entries": {
-      "dingtalk": {
-        "enabled": true
-      },
       "feishu": {
         "enabled": false
       },
       "openclaw-lark": {
         "enabled": false
-      }
-    },
-    "installs": {
-      "openclaw-lark": {
-        "source": "npm",
-        "spec": "@larksuite/openclaw-lark",
-        "installPath": "/root/.openclaw/extensions/openclaw-lark",
-        "version": "2026.3.15",
-        "resolvedName": "@larksuite/openclaw-lark",
-        "resolvedVersion": "2026.3.15",
-        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.15",
-        "integrity": "sha512-YGk63CgYG+YDUO2+TxdSPJZA6km52OpqAqf26vZHMUqawEKhiT4bcfD5JHh6VGazjUwRk5Bze1UyVKncc0csBA==",
-        "shasum": "997cb8ee9cf66dcd3a24477cb5f59f5fb1a57fff",
-        "resolvedAt": "2026-03-16T09:30:41.731Z",
-        "installedAt": "2026-03-16T09:30:59.006Z"
+      },
+      "dingtalk": {
+        "enabled": true
       }
     }
   }
