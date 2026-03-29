@@ -110,7 +110,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1774695621702,
+      "updatedAtMs": 1774782042166,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -123,19 +123,20 @@
         "message": "你是AI新闻助手。请按照 ai-news-zh 技能的流程，从 The Verge AI (https://www.theverge.com/ai-artificial-intelligence) 和 Wired AI RSS (https://www.wired.com/feed/tag/ai/latest/rss) 采集最新AI资讯，整理成中文日报并推送到钉钉。要求：1. 采集8-12条新闻；2. 按分类标注（大模型/Agent/融资/安全/应用/开源）；3. 每条新闻包含标题、摘要（1-2句话）、来源链接；4. 最后加一句点评总结今日趋势；5. 使用格式：🤖 AI 早报 | YYYY.MM.DD（星期X）"
       },
       "delivery": {
+        "mode": "announce",
         "channel": "dingtalk",
-        "mode": "send",
-        "to": "1458302740827526"
+        "to": "1458302740827526",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774782000000,
-        "lastRunAtMs": 1774695600004,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 21698,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774868400000,
+        "lastRunAtMs": 1774782000005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 42161,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -145,7 +146,7 @@
       "name": "session-cleanup-check",
       "enabled": true,
       "createdAtMs": 1773669702340,
-      "updatedAtMs": 1774659620907,
+      "updatedAtMs": 1774747586449,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -157,20 +158,23 @@
         "kind": "agentTurn",
         "message": "检查会话文件大小。请执行以下操作：\n1. 检查 ~/.openclaw/agents/main/sessions/*.jsonl 文件大小\n2. 如果有文件 >500KB 或单条消息 >50KB，列出详细信息\n3. 询问用户是否需要清理\n\n报告格式：\n- 总会话文件大小\n- 最大单条消息大小\n- 建议操作",
         "model": "bailian/qwen3-coder-next",
-        "timeoutSeconds": 60
+        "timeoutSeconds": 120
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774746000000,
-        "lastRunAtMs": 1774659600007,
+        "nextRunAtMs": 1774832400000,
+        "lastRunAtMs": 1774746000005,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 20900,
+        "lastDurationMs": 60021,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "consecutiveErrors": 2,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     {
@@ -180,7 +184,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1774613177413,
+      "updatedAtMs": 1774699325373,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -198,15 +202,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774699200000,
-        "lastRunAtMs": 1774613156613,
+        "nextRunAtMs": 1774785600000,
+        "lastRunAtMs": 1774699307314,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 20800,
+        "lastDurationMs": 18059,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1774699298790
+        "runningAtMs": 1774785600002
       }
     },
     {
@@ -216,7 +220,7 @@
       "name": "trading-signals-morning",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1774657894252,
+      "updatedAtMs": 1774744755909,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -226,7 +230,9 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "【A股盘前信号扫描 - 08:30】\n\n执行时间：每天 08:30（A股开盘前）\n\n任务内容：\n1. 使用 akshare 获取隔夜美股数据\n2. 分析对A股开盘的影响\n3. 预判热点板块\n4. 使用 akshare 筛选今日推荐股票（5只）\n   - 条件：强势股、资金流入、技术形态良好\n   - 输出：股票代码、名称、推荐理由\n5. 发送到钉钉群\n\n推荐格式：\n【今日推荐】（5只）\n1. 代码 - 名称 - 理由\n2. 代码 - 名称 - 理由\n...\n\n数据源：akshare（东方财富/同花顺）"
+        "message": "执行A股盘前信号扫描脚本：python3 /root/.openclaw/workspace/scripts/a-share-signals-morning-extended.py\n\n任务内容：\n1. 使用 akshare 获取隔夜美股数据\n2. 分析对A股开盘的影响\n3. 预判热点板块\n4. 使用 akshare 筛选今日推荐股票（5只）\n   - 条件：强势股、资金流入、技术形态良好\n   - 输出：股票代码、名称、推荐理由\n5. 发送到钉钉群",
+        "model": "bailian/qwen3-coder-next",
+        "timeoutSeconds": 90
       },
       "delivery": {
         "mode": "announce",
@@ -234,14 +240,14 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774744200000,
-        "lastRunAtMs": 1774657800005,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 94247,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774830600000,
+        "lastRunAtMs": 1774744200002,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 555907,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -251,7 +257,7 @@
       "name": "trading-weekly-review",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1774605870020,
+      "updatedAtMs": 1774747579666,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * FRI",
@@ -266,7 +272,8 @@
       "delivery": {
         "mode": "announce",
         "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w==",
+        "bestEffort": true
       },
       "state": {
         "nextRunAtMs": 1775210400000,
@@ -321,7 +328,7 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1774661831474,
+      "updatedAtMs": 1774747898090,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -334,17 +341,19 @@
         "message": "【A股模拟操盘 - 5万元】\n\n执行时间：每天 09:30（A股开盘）\n\n任务内容：\n1. 初始化模拟账户（5万元）\n2. 使用 akshare 获取A股开盘数据\n3. 扫描S1级别强信号（≥95%）\n4. 发现信号后发送到钉钉群\n5. 等待用户确认（执行/跳过）\n6. 根据确认执行模拟交易\n7. 10天后生成盈亏报告\n\n注意：A股交易时间 09:30-11:30, 13:00-15:00"
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774747800000,
-        "lastRunAtMs": 1774661445968,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 385506,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774834200000,
+        "lastRunAtMs": 1774747800006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 98084,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -354,7 +363,7 @@
       "name": "trading-s1-monitor-1",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774663270675,
+      "updatedAtMs": 1774750628293,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -369,17 +378,18 @@
       "delivery": {
         "mode": "announce",
         "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w==",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774749600000,
-        "lastRunAtMs": 1774663200006,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 70669,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774836000000,
+        "lastRunAtMs": 1774750460391,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 167902,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -389,7 +399,7 @@
       "name": "trading-s1-monitor-2",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774677602767,
+      "updatedAtMs": 1774764010101,
       "schedule": {
         "kind": "cron",
         "expr": "0 14 * * *",
@@ -407,11 +417,11 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774764000000,
-        "lastRunAtMs": 1774677600007,
+        "nextRunAtMs": 1774850400000,
+        "lastRunAtMs": 1774764000006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 2760,
+        "lastDurationMs": 10095,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -424,7 +434,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1774662070177,
+      "updatedAtMs": 1774747911981,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -439,17 +449,18 @@
       "delivery": {
         "mode": "announce",
         "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w==",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774747800000,
-        "lastRunAtMs": 1774661831474,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 238703,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774834200000,
+        "lastRunAtMs": 1774747898090,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 13891,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -459,7 +470,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1774684981753,
+      "updatedAtMs": 1774771428427,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -478,14 +489,14 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774699373173,
-        "lastRunAtMs": 1774684973178,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 8575,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastError": "Channel is required (no configured channels detected). Set delivery.channel explicitly or use a main session with a previous channel."
+        "nextRunAtMs": 1774785773173,
+        "lastRunAtMs": 1774771376081,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 52346,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -529,7 +540,7 @@
       "name": "stock-market-close-summary",
       "enabled": true,
       "createdAtMs": 1773904593758,
-      "updatedAtMs": 1774681805491,
+      "updatedAtMs": 1774768210347,
       "schedule": {
         "expr": "10 15 * * *",
         "kind": "cron",
@@ -542,11 +553,11 @@
         "text": "执行A股收盘总结脚本：python3 /root/.openclaw/workspace/scripts/stock_market_close_summary.py"
       },
       "state": {
-        "nextRunAtMs": 1774768200000,
-        "lastRunAtMs": 1774681800004,
+        "nextRunAtMs": 1774854600000,
+        "lastRunAtMs": 1774768200004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5487,
+        "lastDurationMs": 10343,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -558,7 +569,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1774137776434,
-      "updatedAtMs": 1774684811030,
+      "updatedAtMs": 1774771255552,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23/4 * * *",
@@ -571,14 +582,14 @@
         "text": "[服务器资源监控] 开始检查系统资源使用情况...\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）"
       },
       "state": {
-        "nextRunAtMs": 1774699200000,
-        "lastRunAtMs": 1774684800008,
+        "nextRunAtMs": 1774785600000,
+        "lastRunAtMs": 1774771200005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11022,
+        "lastDurationMs": 55547,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "runningAtMs": 1774699298790
+        "runningAtMs": 1774785600002
       }
     },
     {
@@ -588,7 +599,7 @@
       "name": "MedGemma V7.4 优化测试进度汇报",
       "enabled": true,
       "createdAtMs": 1774192759721,
-      "updatedAtMs": 1774695402586,
+      "updatedAtMs": 1774784349109,
       "schedule": {
         "anchorMs": 1742645100000,
         "everyMs": 3600000,
@@ -602,16 +613,18 @@
         "model": "bailian/qwen3-coder-next"
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774699002586,
-        "lastRunAtMs": 1774695380324,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 22262,
+        "nextRunAtMs": 1774787942737,
+        "lastRunAtMs": 1774784342737,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 6372,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 33
+        "consecutiveErrors": 0
       }
     },
     {
@@ -687,25 +700,27 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1774336229720,
-      "updatedAtMs": 1774575089560,
+      "updatedAtMs": 1774744662963,
       "schedule": {
         "kind": "cron",
-        "expr": "30 9 * * 1-5",
+        "expr": "30 8 * * *",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "执行 A股早盘信号扫描\n\n任务内容：\n1. 使用 akshare 获取A股开盘数据\n2. 扫描S1/S2级别交易信号\n3. 获取热门板块分析\n4. 发送到钉钉群\n\n请在 /root/.openclaw/workspace/scripts/a-share-morning-signals.py 路径下执行脚本\n\n注意：\n- 若需发送到钉钉群，请设置 DINGTALK_WEBHOOK_URL 环境变量\n- 信号阈值：涨停家数 > 50 (S1)，涨停家数 < 20 (S2)\n- 跌停家数 < 10 (S1)，跌停家数 > 30 (S2)",
+        "message": "【A股盘前信号扫描 - 08:30】\n\n执行时间：每天 08:30（A股开盘前）\n\n任务内容：\n1. 使用 akshare 获取隔夜美股数据\n2. 分析对A股开盘的影响\n3. 预判热点板块\n4. 使用 akshare 筛选今日推荐股票（5只）\n   - 条件：强势股、资金流入、技术形态良好\n   - 输出：股票代码、名称、推荐理由\n5. 发送到钉钉群\n\n推荐格式：\n【今日推荐】（5只）\n1. 代码 - 名称 - 理由\n2. 代码 - 名称 - 理由\n...\n\n数据源：akshare（东方财富/同花顺）",
         "model": "bailian/qwen3-coder-next",
         "timeoutSeconds": 60
       },
       "delivery": {
-        "mode": "announce"
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774834200000,
+        "nextRunAtMs": 1774830600000,
         "lastRunAtMs": 1774575071130,
         "lastRunStatus": "error",
         "lastStatus": "error",
@@ -722,7 +737,7 @@
       "name": "MedGemma V7.4 SSH状态检查",
       "enabled": true,
       "createdAtMs": 1774580873846,
-      "updatedAtMs": 1774695378120,
+      "updatedAtMs": 1774784340729,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -738,13 +753,14 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774699673846,
-        "lastRunAtMs": 1774694942703,
+        "nextRunAtMs": 1774787940729,
+        "lastRunAtMs": 1774784330361,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 435417,
+        "lastDurationMs": 10368,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 33
+        "consecutiveErrors": 56,
+        "lastError": "DingTalk message requires --to <conversationId>"
       }
     },
     {
@@ -754,7 +770,7 @@
       "name": "A股模拟交易：重试数据获取",
       "enabled": true,
       "createdAtMs": 1774661829316,
-      "updatedAtMs": 1774697248310,
+      "updatedAtMs": 1774785023810,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -767,14 +783,13 @@
         "text": "【A股模拟交易 - 数据重试】\n当前无法获取A股实时数据（API受限）。\n\n已生成详细分析报告：\n- /PROJECTS/stock-trading-sim/DATA_20260328.md\n\n问题类型：✅ 网络限制 / ❌ API不可用\n\n可能的解决方案：\n1. 启用代理服务（当前端口 55555/12222 不可用）\n2. 使用浏览器自动化工具模拟登录\n3. 联系API提供方申请正式API Key\n4. 使用付费数据服务\n\n请选择后续操作：\nA: 等待网络改善后重试\nB: 使用缓存数据生成模拟交易\nC: 跳过今日交易\n\n// 更多信息请查看报告文件"
       },
       "state": {
-        "nextRunAtMs": 1774699039783,
-        "lastRunAtMs": 1774697239783,
+        "nextRunAtMs": 1774786795795,
+        "lastRunAtMs": 1774784995795,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8527,
+        "lastDurationMs": 28015,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1774699298790
+        "consecutiveErrors": 0
       }
     }
   ]
