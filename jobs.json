@@ -40,7 +40,7 @@
       "name": "GitHub Trending Weekly",
       "enabled": true,
       "createdAtMs": 1773541843169,
-      "updatedAtMs": 1774227609974,
+      "updatedAtMs": 1774832430784,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * MON",
@@ -58,13 +58,13 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774832400000,
-        "lastRunAtMs": 1774227600021,
+        "nextRunAtMs": 1775437200000,
+        "lastRunAtMs": 1774832400007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9953,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
+        "lastDurationMs": 30777,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
       }
     },
@@ -75,7 +75,7 @@
       "name": "HuggingFace Trending Models",
       "enabled": true,
       "createdAtMs": 1773549622860,
-      "updatedAtMs": 1774282548048,
+      "updatedAtMs": 1774846883471,
       "schedule": {
         "expr": "0 13 * * MON",
         "kind": "cron",
@@ -93,14 +93,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774846800000,
-        "lastRunAtMs": 1774282508737,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 39311,
+        "nextRunAtMs": 1775451600000,
+        "lastRunAtMs": 1774846800007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 83464,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📱 Nodes failed"
       }
     },
     {
@@ -110,7 +111,7 @@
       "name": "AI News Daily",
       "enabled": true,
       "createdAtMs": 1773549827102,
-      "updatedAtMs": 1774782042166,
+      "updatedAtMs": 1774868738203,
       "schedule": {
         "expr": "0 19 * * *",
         "kind": "cron",
@@ -129,11 +130,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774868400000,
-        "lastRunAtMs": 1774782000005,
+        "nextRunAtMs": 1774954800000,
+        "lastRunAtMs": 1774868712345,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 42161,
+        "lastDurationMs": 25858,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -146,7 +147,7 @@
       "name": "session-cleanup-check",
       "enabled": true,
       "createdAtMs": 1773669702340,
-      "updatedAtMs": 1774747586449,
+      "updatedAtMs": 1774832488611,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -166,15 +167,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774832400000,
-        "lastRunAtMs": 1774746000005,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 60021,
+        "nextRunAtMs": 1774918800000,
+        "lastRunAtMs": 1774832430784,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 57827,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastError": "cron: job execution timed out",
-        "lastErrorReason": "timeout"
+        "consecutiveErrors": 0
       }
     },
     {
@@ -184,7 +183,7 @@
       "name": "openclaw-backup-daily",
       "enabled": true,
       "createdAtMs": 1773673320000,
-      "updatedAtMs": 1774699325373,
+      "updatedAtMs": 1774785624384,
       "schedule": {
         "kind": "cron",
         "expr": "0 20 * * *",
@@ -202,15 +201,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774785600000,
-        "lastRunAtMs": 1774699307314,
+        "nextRunAtMs": 1774872000000,
+        "lastRunAtMs": 1774785600004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 18059,
+        "lastDurationMs": 24380,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1774785600002
+        "runningAtMs": 1774872000004
       }
     },
     {
@@ -220,7 +219,7 @@
       "name": "trading-signals-morning",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1774744755909,
+      "updatedAtMs": 1774830621972,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -240,14 +239,15 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774830600000,
-        "lastRunAtMs": 1774744200002,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 555907,
+        "nextRunAtMs": 1774917000000,
+        "lastRunAtMs": 1774830600003,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21969,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -328,7 +328,7 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1774747898090,
+      "updatedAtMs": 1774834333514,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -346,14 +346,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774834200000,
-        "lastRunAtMs": 1774747800006,
+        "nextRunAtMs": 1774920600000,
+        "lastRunAtMs": 1774834307289,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 98084,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDurationMs": 26225,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -363,7 +362,7 @@
       "name": "trading-s1-monitor-1",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774750628293,
+      "updatedAtMs": 1774836003230,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -382,11 +381,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774836000000,
-        "lastRunAtMs": 1774750460391,
+        "nextRunAtMs": 1774922400000,
+        "lastRunAtMs": 1774836000003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 167902,
+        "lastDurationMs": 3227,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -399,7 +398,7 @@
       "name": "trading-s1-monitor-2",
       "enabled": true,
       "createdAtMs": 1773676949651,
-      "updatedAtMs": 1774764010101,
+      "updatedAtMs": 1774850409732,
       "schedule": {
         "kind": "cron",
         "expr": "0 14 * * *",
@@ -417,11 +416,11 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774850400000,
-        "lastRunAtMs": 1774764000006,
+        "nextRunAtMs": 1774936800000,
+        "lastRunAtMs": 1774850400009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10095,
+        "lastDurationMs": 9723,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -434,7 +433,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1774747911981,
+      "updatedAtMs": 1774834396472,
       "schedule": {
         "kind": "cron",
         "expr": "30 9 * * *",
@@ -453,14 +452,15 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774834200000,
-        "lastRunAtMs": 1774747898090,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 13891,
+        "nextRunAtMs": 1774920600000,
+        "lastRunAtMs": 1774834333514,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 62958,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message: cidPRZXi2wt7jEmvEe4h6ye2w== failed"
       }
     },
     {
@@ -470,7 +470,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1774771428427,
+      "updatedAtMs": 1774858085705,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -489,14 +489,15 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1774785773173,
-        "lastRunAtMs": 1774771376081,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 52346,
+        "nextRunAtMs": 1774872173173,
+        "lastRunAtMs": 1774857928148,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 157557,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "consecutiveErrors": 1,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -540,7 +541,7 @@
       "name": "stock-market-close-summary",
       "enabled": true,
       "createdAtMs": 1773904593758,
-      "updatedAtMs": 1774768210347,
+      "updatedAtMs": 1774854630146,
       "schedule": {
         "expr": "10 15 * * *",
         "kind": "cron",
@@ -553,11 +554,11 @@
         "text": "执行A股收盘总结脚本：python3 /root/.openclaw/workspace/scripts/stock_market_close_summary.py"
       },
       "state": {
-        "nextRunAtMs": 1774854600000,
-        "lastRunAtMs": 1774768200004,
+        "nextRunAtMs": 1774941000000,
+        "lastRunAtMs": 1774854600003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10343,
+        "lastDurationMs": 30143,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -569,7 +570,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1774137776434,
-      "updatedAtMs": 1774771255552,
+      "updatedAtMs": 1774857926082,
       "schedule": {
         "kind": "cron",
         "expr": "0 8-23/4 * * *",
@@ -582,14 +583,14 @@
         "text": "[服务器资源监控] 开始检查系统资源使用情况...\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）"
       },
       "state": {
-        "nextRunAtMs": 1774785600000,
-        "lastRunAtMs": 1774771200005,
+        "nextRunAtMs": 1774872000000,
+        "lastRunAtMs": 1774857600007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 55547,
+        "lastDurationMs": 326075,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
-        "runningAtMs": 1774785600002
+        "runningAtMs": 1774872000004
       }
     },
     {
@@ -599,7 +600,7 @@
       "name": "MedGemma V7.4 优化测试进度汇报",
       "enabled": true,
       "createdAtMs": 1774192759721,
-      "updatedAtMs": 1774784349109,
+      "updatedAtMs": 1774868861057,
       "schedule": {
         "anchorMs": 1742645100000,
         "everyMs": 3600000,
@@ -618,11 +619,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1774787942737,
-        "lastRunAtMs": 1774784342737,
+        "nextRunAtMs": 1774872338203,
+        "lastRunAtMs": 1774868738203,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6372,
+        "lastDurationMs": 122854,
         "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 0
       }
@@ -671,7 +672,7 @@
       "name": "A股午盘收盘总结主任务",
       "enabled": true,
       "createdAtMs": 1774332880138,
-      "updatedAtMs": 1774582614772,
+      "updatedAtMs": 1774841784719,
       "schedule": {
         "expr": "35 11 * * 1-5",
         "kind": "cron",
@@ -684,11 +685,11 @@
         "text": "[cron:trading-market-close-am] 【A股午盘收盘总结】\n\n执行时间：每天 11:35（A股上午收盘后）\n\n任务内容：\n1. 使用 akshare 获取A股上午行情数据\n2. 分析大盘走势（上证指数、深证成指、创业板指）\n3. 热点板块分析\n4. 获取涨幅前5、跌幅前5、活跃前5股票\n5. 发送到钉钉群\n\n输出格式：\n【午盘总结】\n大盘：涨跌情况\n板块：热点板块\n涨幅前5：代码-名称-涨幅\n跌幅前5：代码-名称-跌幅\n活跃前5：代码-名称-成交量\n\n数据源：akshare（东方财富）\n\n【说明】由于网络限制，当前无法访问实时数据源。建议：\n1. 等待代理服务运行后重新执行\n2. 或使用其他网络环境执行\n\n运行脚本：/root/.openclaw/workspace/scripts/run_trading_summary.sh"
       },
       "state": {
-        "nextRunAtMs": 1774841700000,
-        "lastRunAtMs": 1774582500005,
+        "nextRunAtMs": 1774928100000,
+        "lastRunAtMs": 1774841700004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 114767,
+        "lastDurationMs": 84715,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -700,7 +701,7 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1774336229720,
-      "updatedAtMs": 1774744662963,
+      "updatedAtMs": 1774830681979,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -720,14 +721,15 @@
         "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1774830600000,
-        "lastRunAtMs": 1774575071130,
+        "nextRunAtMs": 1774917000000,
+        "lastRunAtMs": 1774830621972,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 18430,
+        "lastDurationMs": 60007,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastError": "DingTalk message requires --to <conversationId>"
+        "consecutiveErrors": 4,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
       }
     },
     {
@@ -737,7 +739,7 @@
       "name": "MedGemma V7.4 SSH状态检查",
       "enabled": true,
       "createdAtMs": 1774580873846,
-      "updatedAtMs": 1774784340729,
+      "updatedAtMs": 1774868710219,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -753,13 +755,13 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1774787940729,
-        "lastRunAtMs": 1774784330361,
+        "nextRunAtMs": 1774872310219,
+        "lastRunAtMs": 1774867692738,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 10368,
+        "lastDurationMs": 1017481,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 56,
+        "consecutiveErrors": 77,
         "lastError": "DingTalk message requires --to <conversationId>"
       }
     },
@@ -770,7 +772,7 @@
       "name": "A股模拟交易：重试数据获取",
       "enabled": true,
       "createdAtMs": 1774661829316,
-      "updatedAtMs": 1774785023810,
+      "updatedAtMs": 1774870823742,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -783,13 +785,40 @@
         "text": "【A股模拟交易 - 数据重试】\n当前无法获取A股实时数据（API受限）。\n\n已生成详细分析报告：\n- /PROJECTS/stock-trading-sim/DATA_20260328.md\n\n问题类型：✅ 网络限制 / ❌ API不可用\n\n可能的解决方案：\n1. 启用代理服务（当前端口 55555/12222 不可用）\n2. 使用浏览器自动化工具模拟登录\n3. 联系API提供方申请正式API Key\n4. 使用付费数据服务\n\n请选择后续操作：\nA: 等待网络改善后重试\nB: 使用缓存数据生成模拟交易\nC: 跳过今日交易\n\n// 更多信息请查看报告文件"
       },
       "state": {
-        "nextRunAtMs": 1774786795795,
-        "lastRunAtMs": 1774784995795,
+        "nextRunAtMs": 1774872461061,
+        "lastRunAtMs": 1774870661061,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 28015,
+        "lastDurationMs": 162681,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "4f077c28-8144-4d84-83a2-bf0fc23487d3",
+      "agentId": "programmer",
+      "sessionKey": "agent:programmer:cron:e4153b6d-6269-4cfe-854b-8463d313b617",
+      "name": "MedGemma V7.4 SSH状态检查摘要",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774822595456,
+      "updatedAtMs": 1774822595456,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-30T14:14:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "### MedGemma V7.4 SSH 隧道状态检查摘要\n\n**时间**: 2026-03-30 06:14 AM (Asia/Shanghai)\n\n**检查结果**:\n- SSH 隧道进程状态: 进程存在但已失效\n- 端口 12222 监听状态: ❌ 未监听\n- SSH 连接测试: ❌ 连接被拒绝\n\n**根本原因**: \n跳板机 (221.7.221.10:51622) 启用了 **OTP 双重验证**，需要密码 + 一次性验证码才能登录。\n\n当前配置的密码 `b jako vIPfQVZ632` 无法单独通过认证。\n\n**输出日志**:\n```\nfang@221.7.221.10: Permission denied (keyboard-interactive).\nWarning: Permanently added '[221.7.221.10]:51622' (ED25519) to the list of known hosts.\n```\n\n**解决方案选项**:\n1. 提供当前有效的 OTP 令牌用于自动认证\n2. 配置跳板机支持公钥认证（免密码登录）\n3. 使用支持 OTP 的 SSH 客户端（如 SSH 密钥 + YubiKey）\n4. 修改跳板机 SSH 配置允许密码 alone 认证\n\n**影响**: 300例 MedGemma V7.4 测试无法执行，因为无法通过 SSH 连接到开发电脑 (10.10.30.39)\n\n**建议**: 人工介入提供 OTP 或调整跳板机认证配置",
+        "model": "bailian/qwen3-coder-next"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1774880040000
       }
     }
   ]
