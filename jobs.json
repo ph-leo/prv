@@ -40,7 +40,7 @@
       "name": "GitHub Trending Weekly",
       "enabled": true,
       "createdAtMs": 1773541843169,
-      "updatedAtMs": 1774832430784,
+      "updatedAtMs": 1775437286377,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * MON",
@@ -58,198 +58,16 @@
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1775437200000,
-        "lastRunAtMs": 1774832400007,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 30777,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "5847c26a-1114-47c4-a095-d7f9652705ea",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "HuggingFace Trending Models",
-      "enabled": true,
-      "createdAtMs": 1773549622860,
-      "updatedAtMs": 1774846883471,
-      "schedule": {
-        "expr": "0 13 * * MON",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "【任务分发与验收】\n\n你的职责：\n1. 任务分发 → 调用 huggingface-trending Agent\n2. 结果验收 → 检查结果完整性和准确性\n3. 分析总结 → 简要分析本周模型趋势特点\n\n任务内容：\n获取 HuggingFace 本周热门模型（前5个）：模型名、简介、下载量\n\n执行流程：\n1. 使用 sessions_spawn 创建 huggingface-trending Agent 会话\n2. 分发任务并明确交付标准\n3. 等待执行结果\n4. 验收：检查是否包含5个模型、信息是否完整\n5. 分析：简要总结本周模型趋势（如：多模态热门、代码模型增长等）\n6. 发送最终报告给我（方）\n\n如果执行失败，分析原因并记录。"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "1458302740827526"
-      },
-      "state": {
-        "nextRunAtMs": 1775451600000,
-        "lastRunAtMs": 1774846800007,
+        "nextRunAtMs": 1776042000000,
+        "lastRunAtMs": 1775437200004,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 83464,
+        "lastDurationMs": 86373,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 1,
-        "lastError": "⚠️ 📱 Nodes failed"
-      }
-    },
-    {
-      "id": "aa609bd0-f734-4b89-aaec-0df72c74edb9",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "AI News Daily",
-      "enabled": true,
-      "createdAtMs": 1773549827102,
-      "updatedAtMs": 1775214042031,
-      "schedule": {
-        "expr": "0 19 * * *",
-        "kind": "cron",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "你是AI新闻助手。请按照 ai-news-zh 技能的流程，从 The Verge AI (https://www.theverge.com/ai-artificial-intelligence) 和 Wired AI RSS (https://www.wired.com/feed/tag/ai/latest/rss) 采集最新AI资讯，整理成中文日报并推送到钉钉。要求：1. 采集8-12条新闻；2. 按分类标注（大模型/Agent/融资/安全/应用/开源）；3. 每条新闻包含标题、摘要（1-2句话）、来源链接；4. 最后加一句点评总结今日趋势；5. 使用格式：🤖 AI 早报 | YYYY.MM.DD（星期X）"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "1458302740827526",
-        "bestEffort": true
-      },
-      "state": {
-        "nextRunAtMs": 1775300400000,
-        "lastRunAtMs": 1775214000005,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 42026,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
-      }
-    },
-    {
-      "id": "716f2d79-e010-4047-95e2-3b276b1e5908",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "session-cleanup-check",
-      "enabled": true,
-      "createdAtMs": 1773669702340,
-      "updatedAtMs": 1775184325048,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "检查会话文件大小。请执行以下操作：\n1. 检查 ~/.openclaw/agents/main/sessions/*.jsonl 文件大小\n2. 如果有文件 >500KB 或单条消息 >50KB，列出详细信息\n3. 询问用户是否需要清理\n\n报告格式：\n- 总会话文件大小\n- 最大单条消息大小\n- 建议操作",
-        "model": "bailian/qwen3-coder-next",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "bestEffort": true
-      },
-      "state": {
-        "nextRunAtMs": 1775264400000,
-        "lastRunAtMs": 1775184205044,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 120004,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
-      }
-    },
-    {
-      "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "openclaw-backup-daily",
-      "enabled": true,
-      "createdAtMs": 1773673320000,
-      "updatedAtMs": 1775140933791,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 20 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "【定时备份任务】\n\n执行 OpenClaw 配置备份到 GitHub：\n\n步骤：\n1. cd ~/openclaw-backup\n2. ./backup.sh\n3. 检查推送结果\n\n只需执行备份，不需要发送消息到群里。\n备份结果保存在 GitHub: git@github.com:ph-leo/prv.git"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "1458302740827526"
-      },
-      "state": {
-        "nextRunAtMs": 1775217600000,
-        "lastRunAtMs": 1775137333785,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 3600006,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "runningAtMs": 1775217600002
-      }
-    },
-    {
-      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "trading-signals-morning",
-      "enabled": true,
-      "createdAtMs": 1773676415965,
-      "updatedAtMs": 1775176822738,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 8 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "执行A股盘前信号扫描脚本：python3 /root/.openclaw/workspace/scripts/a-share-signals-morning-extended.py\n\n任务内容：\n1. 使用 akshare 获取隔夜美股数据\n2. 分析对A股开盘的影响\n3. 预判热点板块\n4. 使用 akshare 筛选今日推荐股票（5只）\n   - 条件：强势股、资金流入、技术形态良好\n   - 输出：股票代码、名称、推荐理由\n5. 发送到钉钉群",
-        "model": "bailian/qwen3-coder-next",
-        "timeoutSeconds": 90
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
-      },
-      "state": {
-        "nextRunAtMs": 1775262600000,
-        "lastRunAtMs": 1775176732736,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 90002,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "lastError": "⚠️ API rate limit reached. Please try again later.",
+        "lastErrorReason": "rate_limit"
       }
     },
     {
@@ -259,7 +77,7 @@
       "name": "trading-weekly-review",
       "enabled": true,
       "createdAtMs": 1773676415965,
-      "updatedAtMs": 1775211779943,
+      "updatedAtMs": 1775815345778,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * FRI",
@@ -278,11 +96,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775815200000,
-        "lastRunAtMs": 1775211700890,
+        "nextRunAtMs": 1776420000000,
+        "lastRunAtMs": 1775815200003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 79053,
+        "lastDurationMs": 145775,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -329,11 +147,10 @@
       "name": "trading-simulation-50k",
       "enabled": true,
       "createdAtMs": 1773676432217,
-      "updatedAtMs": 1775187925051,
+      "updatedAtMs": 1775784959421,
       "schedule": {
         "kind": "cron",
-        "expr": "30 9 * * *",
-        "tz": "Asia/Shanghai"
+        "expr": "32 9 * * *"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -347,88 +164,15 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775266200000,
-        "lastRunAtMs": 1775184325048,
+        "nextRunAtMs": 1775871120000,
+        "lastRunAtMs": 1775784853841,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 3600003,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
-      }
-    },
-    {
-      "id": "f1a2b3c4-d5e6-7890-f1a2-b3c4d5e6f789",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "trading-s1-monitor-1",
-      "enabled": true,
-      "createdAtMs": 1773676949651,
-      "updatedAtMs": 1775191525055,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 10 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "【A股S1信号监控 - 10:00】\n\n执行时间：每天 10:00（盘中）\n\n任务内容：\n1. 使用 akshare 获取A股实时数据\n2. 扫描S1级别强信号（≥95%）\n3. 发现信号后立即发送到钉钉群\n4. 等待用户确认\n\n数据源：东方财富、同花顺"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w==",
-        "bestEffort": true
-      },
-      "state": {
-        "nextRunAtMs": 1775268000000,
-        "lastRunAtMs": 1775187925051,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 3600004,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
-      }
-    },
-    {
-      "id": "g2h3i4j5-k6l7-8901-g2h3-i4j5k6l7m890",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "trading-s1-monitor-2",
-      "enabled": true,
-      "createdAtMs": 1773676949651,
-      "updatedAtMs": 1775202447370,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 14 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "【A股S1信号监控 - 14:00】\n\n执行时间：每天 14:00（下午盘中）\n\n任务内容：\n1. 使用 akshare 获取A股实时数据\n2. 扫描S1级别强信号（≥95%）\n3. 发现信号后立即发送到钉钉群\n4. 等待用户确认"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
-      },
-      "state": {
-        "nextRunAtMs": 1775282400000,
-        "lastRunAtMs": 1775198847366,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 3600004,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "lastDurationMs": 105580,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 4,
+        "lastDelivered": true,
+        "lastError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -438,11 +182,10 @@
       "name": "a-share-signals-morning",
       "enabled": true,
       "createdAtMs": 1773713177659,
-      "updatedAtMs": 1775195125060,
+      "updatedAtMs": 1775784688724,
       "schedule": {
         "kind": "cron",
-        "expr": "30 9 * * *",
-        "tz": "Asia/Shanghai"
+        "expr": "28 9 * * *"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -457,15 +200,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775266200000,
-        "lastRunAtMs": 1775191525055,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 3600005,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1775870880000,
+        "lastRunAtMs": 1775784480003,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 208721,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -475,7 +217,7 @@
       "name": "server-resource-monitor",
       "enabled": true,
       "createdAtMs": 1773719602528,
-      "updatedAtMs": 1775211799685,
+      "updatedAtMs": 1775822596199,
       "schedule": {
         "kind": "cron",
         "expr": "0 8,12,16,20 * * *",
@@ -486,19 +228,19 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "【服务器资源监控】\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）\n\n任务内容：\n1. 检查磁盘空间（df -h）\n2. 检查内存使用（free -h）\n3. 检查CPU负载\n4. 检查OpenClaw日志大小\n5. 如果资源超过阈值，发送告警\n\n告警阈值：\n- 磁盘使用率 > 85%\n- 内存使用率 > 90%\n- 日志文件 > 100MB\n\n通知方式：只通知方（1458302740827526），不发群"
+        "message": "【服务器资源监控】\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）\n\n任务内容：\n1. 检查磁盘空间（df -h）\n2. 检查内存使用（free -h）\n3. 检查CPU负载（uptime）\n4. 检查OpenClaw日志大小\n5. 如果资源超过阈值，发送告警\n\n告警阈值：\n- 磁盘使用率 > 85%\n- 内存使用率 > 90%\n- 日志文件 > 100MB\n\n请执行以下命令获取资源信息：\n- df -h\n- free -h\n- uptime\n- du -sh /root/.openclaw/logs/*.log 2>/dev/null | head -5\n\n然后分析结果，如果超过阈值则发送告警通知。"
       },
       "delivery": {
+        "mode": "announce",
         "channel": "dingtalk",
-        "mode": "send",
         "to": "1458302740827526"
       },
       "state": {
-        "nextRunAtMs": 1775217773173,
-        "lastRunAtMs": 1775211779943,
+        "nextRunAtMs": 1775865773173,
+        "lastRunAtMs": 1775822573176,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19742,
+        "lastDurationMs": 23023,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -545,7 +287,7 @@
       "name": "stock-market-close-summary",
       "enabled": true,
       "createdAtMs": 1773904593758,
-      "updatedAtMs": 1775122687150,
+      "updatedAtMs": 1775805027688,
       "schedule": {
         "expr": "10 15 * * *",
         "kind": "cron",
@@ -558,43 +300,13 @@
         "text": "执行A股收盘总结脚本：python3 /root/.openclaw/workspace/scripts/stock_market_close_summary.py"
       },
       "state": {
-        "nextRunAtMs": 1775286600000,
-        "lastRunAtMs": 1775122566965,
+        "nextRunAtMs": 1775891400000,
+        "lastRunAtMs": 1775805000003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 120185,
+        "lastDurationMs": 27685,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "9d925e6c-e749-4b08-82a8-bebc4ecd96f6",
-      "agentId": "main",
-      "sessionKey": "agent:main:cron:z9y8x7w6-v5u4-t3s2-r1q0-p9o8n7m6l5k4",
-      "name": "server-resource-monitor",
-      "enabled": true,
-      "createdAtMs": 1774137776434,
-      "updatedAtMs": 1775206167572,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8-23/4 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "[服务器资源监控] 开始检查系统资源使用情况...\n\n执行时间：每天 08:00-23:00，每4小时\n（避开夜间 23:00-08:00）"
-      },
-      "state": {
-        "nextRunAtMs": 1775217600000,
-        "lastRunAtMs": 1775206047375,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 120197,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1775217600002
       }
     },
     {
@@ -602,9 +314,9 @@
       "agentId": "programmer",
       "sessionKey": "agent:programmer:main",
       "name": "MedGemma V7.4 优化测试进度汇报",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1774192759721,
-      "updatedAtMs": 1775214306518,
+      "updatedAtMs": 1775254993443,
       "schedule": {
         "anchorMs": 1742645100000,
         "everyMs": 3600000,
@@ -623,11 +335,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775217900008,
-        "lastRunAtMs": 1775214300008,
+        "lastRunAtMs": 1775253900054,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6510,
+        "lastDurationMs": 16648,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -677,7 +388,7 @@
       "name": "A股午盘收盘总结主任务",
       "enabled": true,
       "createdAtMs": 1774332880138,
-      "updatedAtMs": 1775206287784,
+      "updatedAtMs": 1775792142883,
       "schedule": {
         "expr": "35 11 * * 1-5",
         "kind": "cron",
@@ -690,51 +401,13 @@
         "text": "[cron:trading-market-close-am] 【A股午盘收盘总结】\n\n执行时间：每天 11:35（A股上午收盘后）\n\n任务内容：\n1. 使用 akshare 获取A股上午行情数据\n2. 分析大盘走势（上证指数、深证成指、创业板指）\n3. 热点板块分析\n4. 获取涨幅前5、跌幅前5、活跃前5股票\n5. 发送到钉钉群\n\n输出格式：\n【午盘总结】\n大盘：涨跌情况\n板块：热点板块\n涨幅前5：代码-名称-涨幅\n跌幅前5：代码-名称-跌幅\n活跃前5：代码-名称-成交量\n\n数据源：akshare（东方财富）\n\n【说明】由于网络限制，当前无法访问实时数据源。建议：\n1. 等待代理服务运行后重新执行\n2. 或使用其他网络环境执行\n\n运行脚本：/root/.openclaw/workspace/scripts/run_trading_summary.sh"
       },
       "state": {
-        "nextRunAtMs": 1775446500000,
-        "lastRunAtMs": 1775206167572,
+        "nextRunAtMs": 1776051300000,
+        "lastRunAtMs": 1775792100006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 120212,
+        "lastDurationMs": 42877,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "0f7903c5-6e99-401b-a802-9c9101d90e70",
-      "agentId": "main",
-      "sessionKey": "agent:main:cron:h8i9j0k1-l2m3-4567-n8o9-p0q1r2s3t4u5",
-      "name": "a-share-signals-morning",
-      "enabled": true,
-      "createdAtMs": 1774336229720,
-      "updatedAtMs": 1775180602932,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 8 * * *",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "【A股盘前信号扫描 - 08:30】\n\n执行时间：每天 08:30（A股开盘前）\n\n任务内容：\n1. 使用 akshare 获取隔夜美股数据\n2. 分析对A股开盘的影响\n3. 预判热点板块\n4. 使用 akshare 筛选今日推荐股票（5只）\n   - 条件：强势股、资金流入、技术形态良好\n   - 输出：股票代码、名称、推荐理由\n5. 发送到钉钉群\n\n推荐格式：\n【今日推荐】（5只）\n1. 代码 - 名称 - 理由\n2. 代码 - 名称 - 理由\n...\n\n数据源：akshare（东方财富/同花顺）",
-        "model": "bailian/qwen3-coder-next",
-        "timeoutSeconds": 60
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "dingtalk",
-        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
-      },
-      "state": {
-        "nextRunAtMs": 1775262600000,
-        "lastRunAtMs": 1775180542929,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 60003,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -742,9 +415,9 @@
       "agentId": "programmer",
       "sessionKey": "agent:programmer:cron:e416f4e7-e058-4a68-8d95-6ae9ed83593a",
       "name": "MedGemma V7.4 SSH状态检查",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1774580873846,
-      "updatedAtMs": 1775217169920,
+      "updatedAtMs": 1775254993392,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -760,11 +433,10 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1775218887803,
-        "lastRunAtMs": 1775217087803,
+        "lastRunAtMs": 1775254887896,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 82117,
+        "lastDurationMs": 23909,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -832,34 +504,197 @@
       }
     },
     {
-      "id": "4f9ce524-689c-4946-aa61-884281a24a65",
+      "id": "430bcb79-07ca-40b9-8f1f-d465a472afd3",
       "agentId": "main",
-      "sessionKey": "agent:main:cron:z9y8x7w6-v5u4-t3s2-r1q0-p9o8n7m6l5k4",
-      "name": "server-resource-monitor",
-      "description": "服务器资源监控 - 检查磁盘、内存、CPU、日志，超阈值告警",
+      "name": "A股模拟交易-开盘前扫描",
       "enabled": true,
-      "createdAtMs": 1775211793359,
-      "updatedAtMs": 1775211793359,
+      "createdAtMs": 1775356737795,
+      "updatedAtMs": 1775784851760,
       "schedule": {
         "kind": "cron",
-        "expr": "0 8,12,16,20 * * *",
+        "expr": "30 9 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "【服务器资源监控任务】\n\n请执行以下检查：\n\n1. **磁盘空间检查**: df -h\n2. **内存使用检查**: free -h\n3. **CPU负载检查**: uptime 或 top -bn1\n4. **OpenClaw日志大小**: ls -lh /root/.openclaw/logs/ 或 du -sh /root/.openclaw/logs/\n\n**告警阈值**：\n- 磁盘使用率 > 85%\n- 内存使用率 > 90%\n- 日志文件 > 100MB\n\n**执行步骤**：\n1. 运行 df -h 检查磁盘，记录使用率最高的分区\n2. 运行 free -h 检查内存使用率\n3. 运行 uptime 检查负载\n4. 检查 OpenClaw 日志目录大小\n5. 对比阈值，如有超限，发送告警消息给方伟（1458302740827526）\n\n请生成监控报告，格式清晰，包含：\n- 当前时间\n- 各项指标数值\n- 是否超过阈值\n- 如有告警，说明具体情况",
-        "model": "moonshot/kimi-k2.5",
-        "timeoutSeconds": 120
+        "message": "执行A股开盘前扫描任务"
       },
       "delivery": {
         "mode": "announce",
-        "to": "1458302740827526"
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
       },
       "state": {
-        "nextRunAtMs": 1775217600000,
-        "runningAtMs": 1775217600002
+        "nextRunAtMs": 1776043800000,
+        "lastRunAtMs": 1775784690739,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 161021,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "f0f11307-3be9-40ca-b1a5-5918539e9b2b",
+      "agentId": "main",
+      "name": "A股模拟交易-收盘总结",
+      "enabled": true,
+      "createdAtMs": 1775356747837,
+      "updatedAtMs": 1775804782307,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行A股收盘总结任务"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+      },
+      "state": {
+        "nextRunAtMs": 1776063900000,
+        "lastRunAtMs": 1775804700003,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 82304,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "c0ea44dd-6901-4832-9521-515adb6869bb",
+      "agentId": "main",
+      "name": "A股模拟交易-午盘总结",
+      "enabled": true,
+      "createdAtMs": 1775356747891,
+      "updatedAtMs": 1775791913437,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行A股午盘总结任务"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+      },
+      "state": {
+        "nextRunAtMs": 1776051000000,
+        "lastRunAtMs": 1775791800002,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 113435,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "0058ba3a-6c77-4f60-864c-4a3f9f111227",
+      "agentId": "main",
+      "name": "A股模拟交易-交易复盘",
+      "enabled": true,
+      "createdAtMs": 1775356747980,
+      "updatedAtMs": 1775806335268,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行A股交易复盘任务"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "dingtalk",
+        "to": "cidPRZXi2wt7jEmvEe4h6ye2w=="
+      },
+      "state": {
+        "nextRunAtMs": 1776065400000,
+        "lastRunAtMs": 1775806200005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 135263,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "9288047d-140a-4951-8962-458dc94516b1",
+      "agentId": "main",
+      "name": "AI和财经新闻日报",
+      "enabled": true,
+      "createdAtMs": 1775357414910,
+      "updatedAtMs": 1775820728770,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "获取AI和财经新闻每日汇总"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1775907000000,
+        "lastRunAtMs": 1775820600006,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 128764,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "b0b11f77-b9dd-42b3-9c55-d334cfd0c12f",
+      "agentId": "main",
+      "name": "OpenClaw配置备份",
+      "enabled": true,
+      "createdAtMs": 1775825864511,
+      "updatedAtMs": 1775825864511,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行OpenClaw配置自动备份任务"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1775908800000
       }
     }
   ]
